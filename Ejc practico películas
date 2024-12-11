@@ -1,0 +1,54 @@
+# lista vacía para guardar las películas
+peliculas = []
+
+# menú 
+def mostrar_menu():
+    print("\nGestión de Películas")
+    print("1. Añadir película")
+    print("2. Eliminar película")
+    print("3. Mostrar lista de películas")
+    print("4. Buscar película")
+    print("5. Salir")
+
+# bucle principal del programa
+while True:
+    mostrar_menu()  # mostrar las opciones
+    opcion = input("Elige una opción (1-5): ")
+
+    if opcion == "1":  # añadir película
+        nueva_pelicula = input("Escribe el nombre de la película que quieres añadir: ")
+        if nueva_pelicula in peliculas:
+            print(f"La película '{nueva_pelicula}' ya está en la lista.")
+        else:
+            peliculas.append(nueva_pelicula)
+            print(f"Se añadió la película '{nueva_pelicula}'.")
+
+    elif opcion == "2":  # eliminar película
+        pelicula_a_eliminar = input("Escribe el nombre de la película que quieres eliminar: ")
+        if pelicula_a_eliminar in peliculas:
+            peliculas.remove(pelicula_a_eliminar)
+            print(f"Se eliminó la película '{pelicula_a_eliminar}'.")
+        else:
+            print(f"La película '{pelicula_a_eliminar}' no está en la lista.")
+
+    elif opcion == "3":  # mostrar lista de películas
+        if len(peliculas) == 0:
+            print("La lista de películas está vacía.")
+        else:
+            print("Lista de películas:")
+            for pelicula in peliculas:
+                print(f"- {pelicula}")
+
+    elif opcion == "4":  # buscar película
+        pelicula_a_buscar = input("Escribe el nombre de la película que quieres buscar: ")
+        if pelicula_a_buscar in peliculas:
+            print(f"La película '{pelicula_a_buscar}' está en la lista.")
+        else:
+            print(f"La película '{pelicula_a_buscar}' no está en la lista.")
+
+    elif opcion == "5":  # salir
+        print("Saliendo del programa. ¡byee!")
+        break
+
+    else:
+        print("Opción no válida, elige una opción del 1 al 5.")
