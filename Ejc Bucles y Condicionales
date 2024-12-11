@@ -1,0 +1,26 @@
+# texto de 1000 líneas
+texto_largo = ["Línea " + str(i + 1) for i in range(1000)]
+
+# lista para almacenar los bloques de 25 líneas
+bloques = []
+
+# variable temporal: para almacenar un bloque
+bloque_actual = []
+
+# itero a través de las líneas del texto
+for i, linea in enumerate(texto_largo):
+    bloque_actual.append(linea)  # Añadir la línea al bloque actual
+    # Comprobar si el bloque tiene 25 líneas
+    if (i + 1) % 25 == 0:
+        bloques.append(bloque_actual)  # Guardar el bloque completo en la lista de bloques
+        bloque_actual = []  # Reiniciar el bloque actual
+
+# por si quedan líneas en el último bloque (por si no es múltiplo de 25)
+if bloque_actual:
+    bloques.append(bloque_actual)
+
+# mostrar bloques
+for i, bloque in enumerate(bloques):
+    print(f"Bloque {i + 1}:")
+    print(bloque)
+    print()
