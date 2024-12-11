@@ -1,0 +1,26 @@
+import copy
+
+# 1. lista original de empleados
+empleados = [
+    ["Pedro", ["Python", "SQL"]],
+    ["Manolo", ["Java", "C++", "JavaScript"]],
+    ["Alejandro", ["HTML", "CSS", "JavaScript"]]
+]
+
+# 2. copia superficial y una copia profunda
+copia_superficial = empleados.copy()
+copia_profunda = copy.deepcopy(empleados)
+
+# 3.  habilidades de un empleado en la lista original
+# Agregar una nueva habilidad a Pedro
+empleados[0][1].append("Django")
+
+# 4. resultados
+print("Lista original después de la modificación:")
+print(empleados)
+
+print("\nCopia superficial después de la modificación:")
+print(copia_superficial)
+
+print("\nCopia profunda después de la modificación:")
+print(copia_profunda)
