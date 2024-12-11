@@ -1,0 +1,25 @@
+# Ejc 1 Convierte la tupla_mixta a una lista e imprímela
+tupla_mixta = (1, "dos", 3.0, True)
+lista_mixta = list(tupla_mixta)
+print("Lista convertida:", lista_mixta)
+
+# Ejc 2 Modifica el elemento 1 ("dos") de la lista y vuelve a pasar la lista a tupla.
+# Imprime la tupla para ver que se ha modificado el elemento tupla_mixta[1].
+lista_mixta[1] = "nuevo_valor"
+tupla_mixta = tuple(lista_mixta)
+print("Tupla modificada:", tupla_mixta)
+
+# Ejc 3 Crea una tupla numérica y realiza las operaciones de suma, máximo y mínimo.
+tupla_numerica = (10, 20, 30, 40, 50)
+suma = sum(tupla_numerica)
+maximo = max(tupla_numerica)
+minimo = min(tupla_numerica)
+print("Suma:", suma, "| Máximo:", maximo, "| Mínimo:", minimo)
+
+# Ejc 4 Calcula los cuadrados de la tupla con una función de compresión.
+cuadrados = tuple(x**2 for x in tupla_numerica)
+print("Cuadrados de los elementos:", cuadrados)
+
+# Ejc 5 Desempaqueta la tupla en tantas variables como elementos tenga.
+a, b, c, d, e = tupla_numerica
+print("Variables desempaquetadas:", a, b, c, d, e)
