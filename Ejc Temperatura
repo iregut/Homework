@@ -1,0 +1,8 @@
+# temperaturas en grados Celsius 
+temperaturas = [-210, -190, -196, -180, -220, -195, -200]
+
+# lista por comprensión: filtrar las temperaturas mayores o iguales a -196°C
+temperaturas_gaseosas = [temp for temp in temperaturas if temp >= -196]
+
+
+print("Temperaturas en las que el nitrógeno permanece en estado gaseoso:", temperaturas_gaseosas)
