@@ -1,0 +1,37 @@
+import json
+import statistics
+
+personas_json = '''
+[
+    {"nombre": "Ana", "ciudad": "Madrid", "salario": 2500},
+    {"nombre": "Luis", "ciudad": "Barcelona", "salario": 3200},
+    {"nombre": "Marta", "ciudad": "Valencia", "salario": 2800},
+    {"nombre": "Carlos", "ciudad": "Sevilla", "salario": 3100},
+    {"nombre": "Lucía", "ciudad": "Bilbao", "salario": 2600},
+    {"nombre": "Jorge", "ciudad": "Zaragoza", "salario": 2900}
+]
+'''
+
+personas = json.loads(personas_json)
+
+def get_salary(persona):
+    return persona["salario"]
+
+def list_personas_legible(lista_personas):
+    for persona in lista_personas:
+        print(f"Nombre: {persona['nombre']}, Ciudad: {persona['ciudad']}, Salario: {persona['salario']}")
+
+print("Primeras 5 personas:")
+list_personas_legible(personas[:5])
+
+salarios = [get_salary(persona) for persona in personas]
+salario_medio = round(sum(salarios) / len(salarios))
+print(f"\nEl salario medio es: {salario_medio}")
+
+mediana_salario = int(statistics.median(salarios))
+print(f"La mediana del salario es: {mediana_salario}")
+
+ciudades_y_salarios = [(persona["ciudad"], persona["salario"]) for persona in personas]
+
+ciudad, salario = ciudades_y_salarios[4]
+print(f"\nLa quinta ciudad es {ciudad} y su salario es {salario}.")
