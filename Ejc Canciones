@@ -1,0 +1,8 @@
+print("Diccionario de canciones con sus duraciones:")
+{'Bohemian Rhapsody': 5.55, 'Stairway to Heaven': 8.02, 'Hotel California': 6.3, 'Imagine': 3.03, 'Smells Like Teen Spirit': 5.01}
+
+print("Las 3 canciones más largas:")
+{'Stairway to Heaven': 8.02, 'Hotel California': 6.3, 'Bohemian Rhapsody': 5.55}
+
+print("Selección aleatoria de 3 canciones:")
+['Imagine', 'Bohemian Rhapsody', 'Smells Like Teen Spirit']
