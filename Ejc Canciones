@@ -1,8 +1,22 @@
+import random  # Importamos la librería para selección aleatoria
+
+# listas de canciones y sus duraciones
+canciones = ["Bohemian Rhapsody", "Stairway to Heaven", "Hotel California", "Imagine", "Smells Like Teen Spirit"]
+duraciones = [5.55, 8.02, 6.30, 3.03, 5.01]
+
+# combino las listas en un diccionario
+canciones_dict = dict(zip(canciones, duraciones))
 print("Diccionario de canciones con sus duraciones:")
-{'Bohemian Rhapsody': 5.55, 'Stairway to Heaven': 8.02, 'Hotel California': 6.3, 'Imagine': 3.03, 'Smells Like Teen Spirit': 5.01}
+print(canciones_dict)
 
-print("Las 3 canciones más largas:")
-{'Stairway to Heaven': 8.02, 'Hotel California': 6.3, 'Bohemian Rhapsody': 5.55}
+# seleccion 3 canciones más largas
 
-print("Selección aleatoria de 3 canciones:")
-['Imagine', 'Bohemian Rhapsody', 'Smells Like Teen Spirit']
+canciones_ordenadas = dict(sorted(canciones_dict.items(), key=lambda x: x[1], reverse=True))
+canciones_top3 = dict(list(canciones_ordenadas.items())[:3])
+print("\nLas 3 canciones más largas:")
+print(canciones_top3)
+
+# selección aleatoria de 3 canciones
+canciones_aleatorias = random.sample(list(canciones_dict.keys()), 3)
+print("\nSelección aleatoria de 3 canciones:")
+print(canciones_aleatorias)
