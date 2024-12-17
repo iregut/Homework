@@ -1,0 +1,38 @@
+import pandas as pd
+
+# temperaturas semanales
+temperaturas = [22, 25, 24, 21, 20, 23, 26]
+serie_a = pd.Series(temperaturas, name="Temperaturas (°C)")
+
+precipitaciones = [10, 5, 0, 20, 30, 15, 10]
+serie_b = pd.Series(precipitaciones, name="Precipitación (mm)")
+
+print("Serie A - Temperaturas Semanales:")
+print(serie_a)
+print("\nSerie B - Precipitación Semanal:")
+print(serie_b)
+
+
+serie_a_slice = serie_a[:5]
+serie_b_slice = serie_b[:5]
+
+print("\nSlicing de la Serie A (primeros 5 elementos):")
+print(serie_a_slice)
+print("\nSlicing de la Serie B (primeros 5 elementos):")
+print(serie_b_slice)
+
+
+serie_combinada = serie_a_slice + serie_b_slice
+
+
+serie_combinada.name = "Temperaturas + Precipitación"
+
+print("\nSerie Combinada (Suma de Slices):")
+print(serie_combinada)
+
+
+print("\nOperaciones Básicas en la Serie Combinada:")
+print("Suma total:", serie_combinada.sum())
+print("Promedio:", serie_combinada.mean())
+print("Valor máximo:", serie_combinada.max())
+print("Valor mínimo:", serie_combinada.min())
